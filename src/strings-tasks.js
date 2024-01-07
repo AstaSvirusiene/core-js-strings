@@ -40,8 +40,8 @@ function getStringLength(value) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  return typeof value === 'string' || value instanceof String;
 }
 
 /**
@@ -133,8 +133,14 @@ function removeTrailingWhitespaces(value) {
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(str, times) {
+  let newStr = '';
+  if (times > 0) {
+    newStr = str.repeat(times);
+  } else {
+    newStr = '';
+  }
+  return newStr;
 }
 
 /**
@@ -149,8 +155,16 @@ function repeatString(/* str, times */) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  let answer = '';
+  const index = str.indexOf(value);
+  if (index >= 0) {
+    answer =
+      str.substring(0, index) + str.substring(value.length + index, str.length);
+  } else {
+    answer = str;
+  }
+  return answer;
 }
 
 /**
