@@ -305,8 +305,24 @@ function containsSubstring(str, substring) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  return str
+    .split('')
+    .filter(
+      (e) =>
+        e === 'a' ||
+        e === 'A' ||
+        e === 'o' ||
+        e === 'O' ||
+        e === 'i' ||
+        e === 'I' ||
+        e === 'Y' ||
+        e === 'y' ||
+        e === 'e' ||
+        e === 'E' ||
+        e === 'u' ||
+        e === 'U'
+    ).length;
 }
 
 /**
@@ -352,7 +368,7 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
+function reverseWords(str) {
   throw new Error('Not implemented');
 }
 
